@@ -1,0 +1,12 @@
+<h1>Listing articles</h1>
+<div class="article_index">
+  
+
+<%= link_to 'New Article', new_article_path %>
+<% @articles.each do |article| %>
+  <p>
+  	<h2><%= link_to "#{article.title}", :controller => :admin, :action => :show, :id => article %></h2>
+  	Published? <strong><%= article.published %></strong>
+  </p>
+<% end %>
+</div>

@@ -23,6 +23,10 @@
     <%= f.label :tag_names, "Tags" %>  
     <%= f.text_field :tag_names %>  
   </div>
+  <div lass="field">
+  	<%= check_box("article", "published" ) %>
+  	<%= "Publish article" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

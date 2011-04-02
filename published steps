@@ -1,0 +1,6 @@
+1. created add_publish_to_articles migration
+2. edited migration
+3. add publish check box
+4. changed index scope
+5. added scope to article model
+6. Implemented in article controller

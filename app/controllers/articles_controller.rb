@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all(:include => :user)
+    @articles = Article.published
     
     respond_to do |format|
       format.html # index.html.erb
@@ -86,4 +86,6 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+ 
 end

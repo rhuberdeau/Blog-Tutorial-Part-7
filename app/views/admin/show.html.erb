@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div id="article-content" class="span-17">
+  <div class="article_title">
+  <h1><%= @article.title %></h1>
+  </div>
+ <div class="article_body">
+    <p>By <%= @article.user.email %>
+    on <%= @article.created_at.strftime("%B %d, %Y") %>
+    </p>
+    <p>
+      <%= @article.body %>
+    </p>
+    <p>Tags:
+    <% @article.tags.each do |tag|%>
+      <%= tag.name %>
+    <% end %>
+    </p>
+  </div>
+</div>
+<% if can? :update, @article%>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end %>
+

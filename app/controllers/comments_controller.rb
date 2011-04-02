@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.xml
   def create
-      @article = Article.find(params[:article_id])
+    @article = Article.find(params[:article_id])
     @comment = @article.comments.build(params[:comment])
     respond_to do |format|
       if @comment.save
@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1.xml
   def update
     @comment = Comment.find(params[:id])
-    @article = Article.find(params[:article_id])
+    @article = @comment.article
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to(@article, :notice => 'Comment was successfully updated.') }
@@ -68,7 +68,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /comments/1
   # DELETE /comments/1.xml
   def destroy
