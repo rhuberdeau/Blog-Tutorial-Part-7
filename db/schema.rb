@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(:version => 20110321002526) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",                         :null => false
-    t.boolean  "published",    :default => false
-    t.datetime "published_on"
+    t.integer  "user_id",                       :null => false
+    t.boolean  "published",  :default => false
   end
 
   create_table "comments", :force => true do |t|

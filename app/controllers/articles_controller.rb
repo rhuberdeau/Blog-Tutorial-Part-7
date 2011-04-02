@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.published
+    @articles = Article.published.page(params[:page]).per(5).ordered
     
     respond_to do |format|
       format.html # index.html.erb

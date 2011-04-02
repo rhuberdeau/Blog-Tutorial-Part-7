@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
   after_save :assign_tags
   
   scope :published, lambda { {:conditions => ['published = ?', true]} }
+  scope :ordered, lambda {{:order => "Created_at DESC" }}
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
